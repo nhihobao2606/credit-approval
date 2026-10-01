@@ -24,12 +24,12 @@ def load_model():
         "credit_approval_best_model.joblib"
     )
     return joblib.load(model_path)
-
-
 def load_data():
-    return pd.read_csv("new_data.csv")
-
-
+    data_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "new_data.csv"
+    )
+    return pd.read_csv(data_path)
 best_model = load_model()
 new_data = load_data()
 
