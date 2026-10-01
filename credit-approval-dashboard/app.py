@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 import plotly.graph_objects as go
+import os
 
 # =========================================================
 # CẤU HÌNH
@@ -17,8 +18,6 @@ st.set_page_config(
 # LOAD MODEL + DATA
 # =========================================================
 @st.cache_resource
-import os
-
 def load_model():
     model_path = os.path.join(
         os.path.dirname(os.path.abspath(__file__)),
