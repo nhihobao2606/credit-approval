@@ -17,8 +17,14 @@ st.set_page_config(
 # LOAD MODEL + DATA
 # =========================================================
 @st.cache_resource
+import os
+
 def load_model():
-    return joblib.load("credit_approval_best_model.joblib")
+    model_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "credit_approval_best_model.joblib"
+    )
+    return joblib.load(model_path)
 
 
 def load_data():
